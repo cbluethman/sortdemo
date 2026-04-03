@@ -1,0 +1,23 @@
+<Application x:Class="SortDemo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Colors.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Inverse bool converter for IsEnabled bindings -->
+            <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+
+            <!-- Simple inverse bool converter -->
+            <local:InverseBoolConverter x:Key="InverseBoolConverter"
+                xmlns:local="clr-namespace:SortDemo"/>
+            <local:BoolToVisibilityConverter x:Key="BoolToVisConverter"
+                xmlns:local="clr-namespace:SortDemo"/>
+            <local:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisConverter"
+                xmlns:local="clr-namespace:SortDemo"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
