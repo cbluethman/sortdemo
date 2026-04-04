@@ -198,6 +198,7 @@ public class RaceLaneViewModel : INotifyPropertyChanged
     public void Stop()
     {
         _cts?.Cancel();
+        _timer?.Stop();
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;
